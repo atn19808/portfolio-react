@@ -1,41 +1,13 @@
-import { FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
-
-import styled from "styled-components";
-
-export const SocialDiv = styled.div`
-  margin-top: 2rem;
-  display: none;
-  ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-  }
-
-  a {
-    font-size: 2.5rem;
-    color: #151418;
-    transition: 0.2s ease-in;
-    &:hover {
-      color: rgb(57, 134, 250);
-    }
-  }
-
-  .item + .item {
-    margin-left: 2rem;
-  }
-
-  @media screen and (max-width: 768px) {
-    display: block;
-  }
-`;
+import React from "react";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 function SocialIcon() {
   return (
-    <SocialDiv>
-      <ul>
-        <li className="item">
+    <div className="mt-8 block md:hidden">
+      <ul className="flex list-none items-center justify-center">
+        <li>
           <a
+            className="text-5xl text-stone-900 duration-200 ease-in hover:text-blue-500"
             href="https://www.linkedin.com/in/anh-ngo-64880692/"
             target="_blank"
             rel="noopener noreferrer"
@@ -43,26 +15,18 @@ function SocialIcon() {
             <FaLinkedin />
           </a>
         </li>
-        <li className="item">
+        <li className="ml-8">
           <a
-            href="https://github.com/your_username/"
+            className="text-5xl text-stone-900 duration-200 ease-in hover:text-blue-500"
+            href="https://github.com/atn19808/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaGithub />
           </a>
         </li>
-        <li className="item">
-          <a
-            href="https://github.com/your_username/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram />
-          </a>
-        </li>
       </ul>
-    </SocialDiv>
+    </div>
   );
 }
 

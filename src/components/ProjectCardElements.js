@@ -20,10 +20,10 @@ export const CardLeft = styled.div`
   padding: 5px;
   justify-self: center;
 
-  img {
-    border-radius: 3px;
-    height: auto;
-  }
+  // img {
+  //   border-radius: 3px;
+  //   height: auto;
+  // }
 `;
 
 export const CardRight = styled.div`

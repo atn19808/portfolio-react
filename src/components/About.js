@@ -1,19 +1,12 @@
 import { stackList } from "../data/ProjectData";
-import {
-  Image,
-  Technologies,
-  Tech,
-  TechImg,
-  TechName,
-  ContactWrapper,
-} from "./AboutElements";
 function About() {
   return (
-    <ContactWrapper id="about">
+    <div className="mt-20" id="about">
       <div className="Container">
         <div className="SectionTitle">About Me</div>
         <div className="BigCard">
-          <Image
+          <img
+            className="mx-auto mb-4 mt-0 max-w-[120px]"
             src="https://raw.githubusercontent.com/gurupawar/website/main/src/Assets/man-svgrepo-com.svg"
             alt="man-svgrepo"
           />
@@ -29,17 +22,20 @@ function About() {
           <div className="AboutBio tagline2">
             I have become confident using the following technologies.
           </div>
-          <Technologies>
+          <div className="mx-auto -mb-8 flex flex-wrap justify-center">
             {stackList.map((stack, index) => (
-              <Tech key={index} className="tech">
-                <TechImg src={stack.img} alt={stack.name} />
-                <TechName>{stack.name}</TechName>
-              </Tech>
+              <div
+                key={index}
+                className="tech mb-8 flex min-w-[100px] max-w-[100px] flex-col items-center"
+              >
+                <img className="h-12 w-12" src={stack.img} alt={stack.name} />
+                <div className="text-sm">{stack.name}</div>
+              </div>
             ))}
-          </Technologies>
+          </div>
         </div>
       </div>
-    </ContactWrapper>
+    </div>
   );
 }
 

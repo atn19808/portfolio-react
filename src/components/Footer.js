@@ -1,30 +1,11 @@
-import styled from "styled-components";
-
-const FooterSection = styled.div`
-  background-image: url(https://raw.githubusercontent.com/gurupawar/website/main/src/Assets/footer_wave.svg);
-  // background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 250px;
-  position: relative;
-
-  span {
-    position: absolute;
-    bottom: 4rem;
-    color: #fff;
-
-    a {
-      text-decoration: underline;
-    }
-  }
-`;
 function Footer() {
   return (
-    <FooterSection>
+    <div className="relative h-64 w-full bg-[url(https://raw.githubusercontent.com/gurupawar/website/main/src/Assets/footer_wave.svg)] bg-cover bg-no-repeat">
       <div className="Container">
-        <span>
+        <span className="absolute bottom-16 text-stone-50">
           Coded with 💙 by{" "}
           <a
+            className="underline"
             href="https://www.linkedin.com/in/anh-ngo-64880692/"
             target="_blank"
             rel="noopener noreferrer"
@@ -33,7 +14,7 @@ function Footer() {
           </a>{" "}
         </span>
       </div>
-    </FooterSection>
+    </div>
   );
 }
 

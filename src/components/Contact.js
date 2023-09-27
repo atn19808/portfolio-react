@@ -1,28 +1,27 @@
 import SocialIcon from "./SocialIcon";
-import FixSocialIcon from "./FixSocialIcon";
-import { ContactWrapper, Email } from "./ContactElements";
 function Contact() {
   return (
-    <ContactWrapper id="contact">
+    <div id="contact">
       <div className="Container">
         <div className="SectionTitle">Get In Touch</div>
         <div className="BigCard">
-          <Email>
-            <span>your_email@gmail.com</span>
+          <div className="flex flex-col items-center justify-around lg:flex-row">
+            <span className="mb-4 text-base font-medium sm:text-2xl lg:mb-0 lg:text-4xl">
+              atn1908@gmail.com
+            </span>
             <a
               className="btn PrimaryBtn"
-              href="mailto:your_email@gmail.com"
+              href="mailto:atn1908@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               Send Mail
             </a>
-          </Email>
+          </div>
         </div>
-        {/* <FixSocialIcon /> */}
         <SocialIcon />
       </div>
-    </ContactWrapper>
+    </div>
   );
 }
 

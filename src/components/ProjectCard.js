@@ -1,27 +1,25 @@
 import { ProjectList } from "../data/ProjectData";
-import {
-  Card,
-  CardLeft,
-  CardRight,
-  Stack,
-  BtnGroup,
-} from "./ProjectCardElements";
 function ProjectCard() {
   return (
     <>
       {ProjectList.map((list, index) => (
-        <Card key={index}>
-          <CardLeft>
-            <img src={list.img} alt={list.name} />
-          </CardLeft>
-          <CardRight>
+        <div
+          key={index}
+          className="mb-16  grid grid-cols-[1fr] gap-8 border-b-[1px_solid_black] pb-8 lg:grid-cols-[1fr_1fr] lg:border-b-0 lg:pb-0"
+        >
+          <div className="justify-self-center rounded bg-indigo-700 p-1">
+            <img className="h-auto rounded" src={list.img} alt={list.name} />
+          </div>
+          <div className="flex flex-col items-center justify-center lg:mt-4 lg:items-start">
             <h4>{list.title}</h4>
-            <p>{list.description}</p>
-            <Stack>
-              <span className="stackTitle">Tech Stack -</span>
-              <span className="tags">{list.tech_stack}</span>
-            </Stack>
-            <BtnGroup>
+            <p className="mb-4 mt-2 max-w-sm text-center font-normal text-gray-900 lg:text-start">
+              {list.description}
+            </p>
+            <div className="mb-1 flex items-center">
+              <span className="mr-2 text-base font-medium">Tech Stack -</span>
+              <span className="text-sm font-normal">{list.tech_stack}</span>
+            </div>
+            <div className="flex h-20 items-center">
               <a
                 className="btn btn2 SecondarBtn"
                 href={list.github_url}
@@ -38,9 +36,9 @@ function ProjectCard() {
               >
                 Demo ➜
               </a>
-            </BtnGroup>
-          </CardRight>
-        </Card>
+            </div>
+          </div>
+        </div>
       ))}
     </>
   );

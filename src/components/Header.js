@@ -1,9 +1,10 @@
 import { Nav, Logo, NavLink, Bars, NavMenu, NavBtn } from "./HeaderElements";
+import { FaBars } from "react-icons/fa";
 
 const Header = ({ toggle }) => {
   return (
     <div className="Container">
-      <Nav>
+      <nav className="z-10 flex h-24 content-between items-center bg-transparent">
         <Logo to="/">
           <img
             src="https://raw.githubusercontent.com/gurupawar/website/main/src/Assets/logo.png"
@@ -21,7 +22,7 @@ const Header = ({ toggle }) => {
             Contact
           </NavLink>
         </NavMenu>
-        <NavBtn>
+        <nav className="mr-6 hidden items-center md:flex">
           <a
             className="btn PrimaryBtn"
             href="https://github.com/atn19808/"
@@ -30,9 +31,12 @@ const Header = ({ toggle }) => {
           >
             Resume
           </a>
-        </NavBtn>
-        <Bars onClick={toggle} />
-      </Nav>
+        </nav>
+        <FaBars
+          className="block cursor-pointer text-[1.8rem] text-stone-50 md:hidden"
+          onClick={toggle}
+        />
+      </nav>
     </div>
   );
 };
