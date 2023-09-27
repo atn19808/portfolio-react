@@ -2,42 +2,6 @@ import { FaTimes } from "react-icons/fa";
 import styled from "styled-components";
 import { Link as ScrollLink } from "react-scroll";
 
-const SiderBar = styled.div`
-  background: #151418;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  /* top: 0; */
-  left: 0;
-  z-index: 999;
-  transition: 0.3s ease-in-out;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
-  top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
-`;
-
-const CloseIcon = styled(FaTimes)`
-  font-size: 2rem;
-  color: #fff;
-  position: absolute;
-  right: 2rem;
-  top: 2rem;
-  cursor: pointer;
-`;
-export const NavMenu = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  .menu-item + .menu-item {
-    margin-top: 2rem;
-  }
-`;
-
 export const NavLink = styled(ScrollLink)`
   color: #fff;
   cursor: pointer;
@@ -56,46 +20,54 @@ export const NavBtn = styled.div`
 `;
 
 function Dropdown({ isOpen, toggle }) {
+  const topOpacity = isOpen ? "top-0 opacity-100" : "-top-full opacity-0";
   return (
-    <SiderBar isOpen={isOpen} onClick={toggle}>
-      <CloseIcon onClick={toggle} />
-      <NavMenu>
-        <NavLink
+    <div
+      className={`${topOpacity} fixed left-0 z-[999] flex h-full w-full  flex-col items-center justify-center bg-black duration-300 ease-in-out`}
+      isOpen={isOpen}
+      onClick={toggle}
+    >
+      <FaTimes
+        className="absolute right-8 top-8 cursor-pointer text-[2rem] text-stone-50"
+        onClick={toggle}
+      />
+      <div className="flex flex-col content-center items-center">
+        <ScrollLink
           onClick={toggle}
-          className="menu-item"
+          className="cursor-pointer text-[1.7rem] text-stone-50 hover:text-stone-400"
           to="projects"
           smooth={true}
         >
           Projects
-        </NavLink>
-        <NavLink
+        </ScrollLink>
+        <ScrollLink
           onClick={toggle}
-          className="menu-item"
+          className="mt-8 cursor-pointer text-[1.7rem] text-stone-50 hover:text-stone-400"
           to="about"
           smooth={true}
         >
           About
-        </NavLink>
-        <NavLink
+        </ScrollLink>
+        <ScrollLink
           onClick={toggle}
-          className="menu-item"
+          className="mt-8 cursor-pointer text-[1.7rem] text-stone-50 hover:text-stone-400"
           to="contact"
           smooth={true}
         >
           Contact
-        </NavLink>
-      </NavMenu>
-      <NavBtn onClick={toggle}>
+        </ScrollLink>
+      </div>
+      <div className="mt-20 flex content-center text-[1.7rem]" onClick={toggle}>
         <a
           className="btn PrimaryBtn"
-          href="https://github.com/gurupawar/"
+          href="https://www.linkedin.com/in/anh-ngo-64880692/"
           target="_blank"
           rel="noopener noreferrer"
         >
           Resume
         </a>
-      </NavBtn>
-    </SiderBar>
+      </div>
+    </div>
   );
 }
 

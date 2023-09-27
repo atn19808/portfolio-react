@@ -1,27 +1,41 @@
-import { Nav, Logo, NavLink, Bars, NavMenu, NavBtn } from "./HeaderElements";
+import { Link as LinkRouter } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import { FaBars } from "react-icons/fa";
 
 const Header = ({ toggle }) => {
   return (
     <div className="Container">
-      <nav className="z-10 flex h-24 content-between items-center bg-transparent">
-        <Logo to="/">
+      <nav className="z-10 flex h-24 items-center justify-between bg-transparent">
+        <LinkRouter to="/">
           <img
+            className="h-12 w-12"
             src="https://raw.githubusercontent.com/gurupawar/website/main/src/Assets/logo.png"
             alt="logo"
           />
-        </Logo>
-        <NavMenu>
-          <NavLink className="menu-item" to="projects" smooth={true}>
+        </LinkRouter>
+        <div className="-mr-6 hidden items-center md:flex">
+          <ScrollLink
+            className="flex h-full cursor-pointer items-center text-[1.2rem] text-stone-400 hover:text-stone-50"
+            to="projects"
+            smooth={true}
+          >
             Projects
-          </NavLink>
-          <NavLink className="menu-item" to="about" smooth={true}>
+          </ScrollLink>
+          <ScrollLink
+            className="ml-4 flex h-full cursor-pointer items-center text-[1.2rem] text-stone-400 hover:text-stone-50"
+            to="about"
+            smooth={true}
+          >
             About
-          </NavLink>
-          <NavLink className="menu-item" to="contact" smooth={true}>
+          </ScrollLink>
+          <ScrollLink
+            className="ml-4 flex h-full cursor-pointer items-center text-[1.2rem] text-stone-400 hover:text-stone-50"
+            to="contact"
+            smooth={true}
+          >
             Contact
-          </NavLink>
-        </NavMenu>
+          </ScrollLink>
+        </div>
         <nav className="mr-6 hidden items-center md:flex">
           <a
             className="btn PrimaryBtn"
