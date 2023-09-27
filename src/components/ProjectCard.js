@@ -11,7 +11,7 @@ function ProjectCard() {
             <img className="h-auto rounded" src={list.img} alt={list.name} />
           </div>
           <div className="flex flex-col items-center justify-center lg:mt-4 lg:items-start">
-            <h4>{list.title}</h4>
+            <h4 className="text-xl font-medium">{list.title}</h4>
             <p className="mb-4 mt-2 max-w-sm text-center font-normal text-gray-900 lg:text-start">
               {list.description}
             </p>

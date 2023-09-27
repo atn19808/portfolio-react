@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Dropdown from "./Dropdown";
 import Header from "./Header";
-import { ScrollDown } from "./HeroElements";
+import { Link as LinkScroll } from "react-scroll";
+
 function Hero() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -33,9 +34,9 @@ function Hero() {
             />
           </div>
         </div>
-        <ScrollDown
+        <LinkScroll
           to="projects"
-          className="mt-12 flex cursor-pointer justify-center lg:justify-start"
+          className="mt-12 flex cursor-pointer justify-center hover:animate-bounce lg:justify-start"
         >
           <div className="flex items-center text-xl text-stone-100">
             Scroll down
@@ -45,7 +46,7 @@ function Hero() {
               alt="scroll-down"
             />
           </div>
-        </ScrollDown>
+        </LinkScroll>
       </div>
     </main>
   );
