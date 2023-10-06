@@ -1,0 +1,71 @@
+Things to do before applying for jobs:
+- Finish projects (React + .NET Core)
+	- Worldwise (Github + Netlify) (NOW)
+	- Pizza (Github + Netlify)
+	- The Wild Oasis (Github + Netlify)
+	
+	- Book Ecom (Github + Youtube)
+	- Food Delivery (Github + Youtube)
+
+- Finish Resume
+	- Resume pdf
+	- Put experience on the website
+	
+
+
+
+My name is Anh Ngo. I grew up in a small town in Vietnam. In 2011, my family moved to the US, where I finished high school and got a bachelor of science in Electrical Engineering. I started working as a software engineer in 2018
+
+ In 2017, I was able to go back and visited Vietnam for a few weeks. 
+ 
+ 
+ DevOps 
+	Dev - Planning - Code (Source Code, Version) - Build (Development, Automation) - Test (Quality Control) - Release 
+	Ops	- Deploy (Infrastructure as Code, Provisioning, Configuration Management) - Operate (Virtualization, Containerization) - Monitor (Visualization, Logging)
+ 
+ Quorum - Software company in the Oil and Gas industry
+ 
+ In the Upstream orgnization - focus on exploration activities, including creating geological surveys, obtaining land rights, and production activities. These land operation manages identities like oil wells and drillings. I'm part of the Financial team where we build software for financial reports. 
+ 
+ Software 
+	- Core products - backend processes, some of them written in C++, consumed by Land, Revenue, Financial, DO. 
+	
+	- Financial Team - working on 
+		- Account Payable (AP) Workflow - manages invoices, streamline AP processes, and make sure the right approvals are happening.
+			AP process includes receiving, entering, scanning, and routing vendor invoices. 
+			
+		- Authorization for Expenditures - prepare cost estimates, approve AFEs, and monitor all project budgets 
+		- Revenue Processing - record purchaser checks, review status of owner's revenue, print revenue checks,...
+		- Joint Interest Billing - divide partner expense from joint ventures, according to the specific agreement terms.
+		- Division Order - manage revenue decks, expense decks, and well allocation.
+		- Integration - one product for all of the service.
+		
+Quorum Devops
+	- Environments - dev, test, production
+	- CI (Build) pipelines for Land, Revenue, and Financial
+		- Restore dependencies
+		- Build projects
+		- Running unitest 
+		- Upload package, artifacts to the release pipeline
+	- CD (Release) pipelines
+		- download artifacts
+		- deploy to DEV/TEST (scheduled for every 2 days)/Product (~every 6 months)
+	
+YAML	
+
+	Flow: dev environment (/src /tests) -(git commit)-> Azure Repos -approved PRs in dev trigger-> Build/CI pipelines
+	
+	Docker Image for the upstream database - spin up local dev environment with the docker, don't worry about messing up with the data or working on the same thing with another dev
+	
+	Create my own build pipeline that's trigger from my git branch, don't intefere with other devs or someone is working on the environment. 
+	
+Terminology
+	A pipeline is one or more stages that describe a CI/CD process
+	
+	Stages are the biggest unit in a pipeline
+		Build this app
+		Run these test
+	
+	A stage has one or more jobs - unit of works assigned on the same machine
+		
+	Build Agent - piece of software that runs one build or deployment job at a time. 
