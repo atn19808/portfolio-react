@@ -1,3 +1,20 @@
+// --------------------------------------- Experience List
+export const ExperienceList = [
+  {
+    img: "",
+    title: "Quorum Software",
+    description: "Oil and Gas Industry",
+    tech_stack: "Html, Css, Javascript",
+    company_url: "",
+  },
+  {
+    img: "",
+    title: "Tata Consultancy Services",
+    description: "Consultancy",
+    tech_stack: "Html, Css, Javascript, Angular 6, Java Spring Boot",
+    company_url: "",
+  },
+];
 // --------------------------------------- Project List
 export const ProjectList = [
   {
